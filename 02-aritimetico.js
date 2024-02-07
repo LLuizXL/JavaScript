@@ -1,4 +1,4 @@
-// Utilizando operadores aritiméticom com JavaScript
+// Utilizando operadores aritiméticos com JavaScript
 
 console.log("A soma entre 8 e 7 é", 8 + 7);
 
