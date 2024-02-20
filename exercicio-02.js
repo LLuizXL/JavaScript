@@ -19,7 +19,7 @@ console.log(
   largura,
   "cm, sua área é de",
   area,
-  "cm."
+  "cm²."
 );
 
 var altura = 5;
@@ -30,7 +30,7 @@ console.log(
   altura,
   "cm. Agora a figura possui um volume de",
   volume,
-  "cm."
+  "cm²."
 );
 
 console.log(" ");
@@ -40,9 +40,9 @@ var a = 2;
 var b = 3;
 var c = -1;
 
-console.log("Equação ", a, "x^2 +", b, "x", -1);
+console.log("Equação ", a, "x² +", b, "x", -1);
 
-console.log("Função de delta b^2 - 4.a.c --> 3^2 - 4 x 2 x -1");
+console.log("Função de delta b² - 4.a.c --> 3² - 4 x 2 x -1");
 console.log("Resolução: Delta é igual a ", b ** 2 - 4 * a * c);
 
 console.log(" ");
