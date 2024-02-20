@@ -57,7 +57,7 @@ console.log("Saldo atual: R$", (saldo /= 8));
 console.log("");
 
 console.log(
-  "Você recebeu R$ 220000 de Jair Bolsonaro. Mensagem:    Patriota amigo meu não vai ter dinheiro roubado! Bala nos comunistas!"
+  "Você recebeu R$ 220000 de Jair Bolsonaro. Mensagem: Patriota amigo meu não vai ter dinheiro roubado! Bala nos comunistas!"
 );
 console.log("Saldo atual: R$", (saldo += 220000));
 
