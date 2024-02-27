@@ -42,3 +42,37 @@ console.table(dinos);
 
 dinos.splice(1, 1); //remove o elemento a partir do índice 1, contando 1.
 console.table(dinos);
+
+console.log(" ");
+console.log("-------------------Continuação Aula-----------------------");
+var dinos = [
+  "Crisserátops",
+  "Tiranossauro",
+  "Estercossauro",
+  "Anquilossauro",
+  "Brontossauro",
+  "Ictiossauro",
+  "PeterRodáctilo",
+  "LoisSauro",
+];
+
+console.table(dinos);
+
+var elementoProcurado = "Brontossauro";
+var posicao = dinos.indexOf(elementoProcurado);
+console.log("O " + elementoProcurado + " está na posição " + posicao);
+
+var elementoProcurado = "PeterRodáctilo";
+var posicao = dinos.indexOf(elementoProcurado);
+console.log("O " + elementoProcurado + " está na posição " + posicao);
+
+
+var elementoProcurado = "LoisSauro";
+var posicao = dinos.indexOf(elementoProcurado);
+console.log("O " + elementoProcurado + " está na posição " + posicao);
+// O indexOf retorna o valor da posição do elemento citado na variável.
+console.log(" ")
+
+var copia1 = dinos.slice()
+console.log("Vetor cópia 1")
+console.table(copia1);
