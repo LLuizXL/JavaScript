@@ -1,22 +1,22 @@
-// var anoNasc = 2003;
+var anoNasc = 2003;
 
-// if (anoNasc > 2003) console.log("A pessoa nasceu depois de 2003");
-// // if (anoNasc < 2003) console.log("A pessoa nasceu antes de 2003!");
-// // if (anoNasc == 2003) console.log("A pessoa nasceu em 2003!");
-// else console.log(`A pessoa nasceu antes de 2003!`);
+if (anoNasc > 2003) console.log("A pessoa nasceu depois de 2003");
+// if (anoNasc < 2003) console.log("A pessoa nasceu antes de 2003!");
+// if (anoNasc == 2003) console.log("A pessoa nasceu em 2003!");
+else console.log(`A pessoa nasceu antes de 2003!`);
 
-//função sinaleiro
+função sinaleiro
 
-// function sinaleiro(cor) {
-//   if (cor == "vermelho") console.log(`Pare`);
-//   else if (cor == "amarelo") console.log(`preste atenção`);
-//   else if (cor == "verde") console.log(`Siga`);
-//   else
-//     console.log(
-//       `Você informou cores diferentes de verde, amarelo ou vermelho. Seu Burro!`
-//     );
-// }
-// sinaleiro("dourado");
+function sinaleiro(cor) {
+  if (cor == "vermelho") console.log(`Pare`);
+  else if (cor == "amarelo") console.log(`preste atenção`);
+  else if (cor == "verde") console.log(`Siga`);
+  else
+    console.log(
+      `Você informou cores diferentes de verde, amarelo ou vermelho. Seu Burro!`
+    );
+}
+sinaleiro("dourado");
 
 //condicional composto com if
 
@@ -57,6 +57,6 @@ var preco = 500;
 
 var resultado = preco <= 100 ? `Ta barato demais!` : `Ta caro demais!`;
 
-// if (preco <= 100) console.log(`Ta barato`);
-// else console.log(`Tá caro DEMAIS!!!!!`);
+if (preco <= 100) console.log(`Ta barato`);
+else console.log(`Tá caro DEMAIS!!!!!`);
 console.log(resultado);
