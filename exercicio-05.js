@@ -1,4 +1,4 @@
-function idade(anoAgora, anoNascimento) {
+function idade(anoNascimento) {
   return anoAtual - anoNascimento;
 }
 
@@ -7,7 +7,6 @@ var anoAtual = 2024;
 
 console.log(
   `Você nasceu em ${nascimento}, logo, você tem ${idade(
-    anoAtual,
     nascimento
   )} anos!`
 );
@@ -23,3 +22,9 @@ function distViagem(quantCombustivel) {
 var combustivel = 30
 
 console.log(`Você possui ${combustivel} Litros de combustível. Você poderá percorrer por ${distViagem(combustivel) } Kilômetros.`)
+
+
+
+
+
+
