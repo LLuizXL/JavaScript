@@ -27,7 +27,7 @@ console.log(
 console.log(" ");
 console.log("-------------------------------------------------------");
 
-var idadeVoto = 16;
+var idadeVoto = 12;
 
 console.log(idadeVoto);
 
