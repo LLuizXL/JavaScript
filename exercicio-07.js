@@ -38,62 +38,164 @@ console.log(
     populacaoA
   )}) irá passar a População B (${Math.round(populacaoB)}) em ${anos} Anos!`
 );
-console.log("------------------------------------------------------------------------------------------------")
-console.log(" ")
+
+console.log(
+  "------------------------------------------------------------------------------------------------"
+);
+console.log(" ");
 
 console.log("--------------Jogo da Velha aleatório--------------");
 
-var jogoVelha = [
-  ["", "", ""],
-  ["", "", ""],
-  ["", "", ""],
+// const tabuleiro = [
+//   [" ", " ", " "],
+//   [" ", " ", " "],
+//   [" ", " ", " "],
+// ];
+// let jogadorAtual = "X";
+
+// function jogar(jogador) {
+//   let linha, coluna;
+//   do {
+//     linha = Math.floor(Math.random() * 3);
+//     coluna = Math.floor(Math.random() * 3);
+//   } while (tabuleiro[linha][coluna] !== " ");
+
+//   tabuleiro[linha][coluna] = jogador;
+//   jogadorAtual = jogadorAtual === "X" ? "O" : "X";
+// }
+
+// function verificaVencedor() {
+//   for (let i = 0; i < 3; i++) {
+//     if (
+//       tabuleiro[0][i] === tabuleiro[1][i] &&
+//       tabuleiro[1][i] === tabuleiro[2][i] &&
+//       tabuleiro[1][i] !== " "
+//     ) {
+//       console.log(`O jogador ${tabuleiro[1][i]} ganhou.`);
+//       return tabuleiro[1][i];
+//     } else if (
+//       tabuleiro[i][0] === tabuleiro[i][1] &&
+//       tabuleiro[i][1] === tabuleiro[i][2] &&
+//       tabuleiro[i][1] !== " "
+//     ) {
+//       console.log(`O jogador ${tabuleiro[i][1]} ganhou.`);
+//       return tabuleiro[i][1];
+//     }
+//   }
+
+//   //Tirei as diagonais do laço for, se não ela seria verificada 3 vezes(sem necessidade)
+//   if (
+//     tabuleiro[0][0] === tabuleiro[1][1] &&
+//     tabuleiro[1][1] === tabuleiro[2][2] &&
+//     tabuleiro[1][1] !== " "
+//   ) {
+//     console.log(`O jogador ${tabuleiro[1][1]} ganhou.`);
+//     return tabuleiro[1][1];
+//   } else if (
+//     tabuleiro[0][2] === tabuleiro[1][1] &&
+//     tabuleiro[1][1] === tabuleiro[2][0] &&
+//     tabuleiro[1][1] !== " "
+//   ) {
+//     console.log(`O jogador ${tabuleiro[1][1]} ganhou.`);
+//     return tabuleiro[1][1];
+//   }
+//   if (!tabuleiro.some((event) => event.includes(""))) {
+//     console.log("O jogo empatou.");
+//     return "Empate";
+//   }
+//   return "";
+// }
+
+// let vencedor = "";
+
+// while (!vencedor) {
+//   jogar(jogadorAtual);
+//   console.table(tabuleiro);
+//   vencedor = verificaVencedor();
+
+//   if (!vencedor) {
+//     jogar(jogadorAtual);
+//     console.table(tabuleiro);
+//     vencedor = verificaVencedor();
+//   }
+// }
+
+// Estrutura do Tabuleiro
+const tabuleiro = [
+  [" ", " ", " "],
+  [" ", " ", " "],
+  [" ", " ", " "],
 ];
 
-console.log(`_____|____|_____`);
-console.log(`_____|____|_____`);
-console.log(`     |    |     `);
+let jogadorAtual = "X";
 
-var Player1 = "X";
-var Player2 = "O";
-var tabuleiro = [
-  ["", "", ""],
-  ["", "", ""],
-  ["", "", ""],
-];
+function jogar(jogador) {
+  let linha, coluna;
 
-  let linha = Math.floor(Math.random() * 3);
-  let coluna = Math.floor(Math.random() * 3);
+  do {
+    linha = Math.floor(Math.random() * 3);
+    coluna = Math.floor(Math.random() * 3);
+  } while (tabuleiro[linha][coluna] !== " ");
 
-  if (tabuleiro[linha][coluna] == "") tabuleiro[linha][coluna] = jogador;
-  else{Jogada(jogador)
-    
+  tabuleiro[linha][coluna] = jogador;
+  jogadorAtual = jogadorAtual === "X" ? "O" : "X";
 }
 
-
-function verificarVitóriaX(){
-
-//Diagonal:
-if (tabuleiro[0][0] === Player1 && tabuleiro[1][1] === Player1 && tabuleiro[2][2] === Player1 || tabuleiro[2][0] === Player1 && tabuleiro[1][1] === Player1 && tabuleiro[0][2] === Player1)
-   console.log ("Jogador X venceu a rodada.")
-   //Linhas:
-
-   else if (tabuleiro[0][0]=== Player1 && tabuleiro[0][1]=== Player1 && tabuleiro[0][2]=== Player1 || tabuleiro[1][0] === Player1 && tabuleiro[1][1] === Player1 && tabuleiro[1][2] === Player1 || tabuleiro[2][0] === Player1 && tabuleiro[2][1] === Player1 && tabuleiro[2][2] === Player1) 
-   console.log("Jogador X Venceu a partida")
-//Colunas:
-else if (tabuleiro[0][0] === Player1 && tabuleiro[0][1] === Player1 && tabuleiro[0][2] === Player1 && || tabuleiro[0][1] === Player1 && tabuleiro[1][1] === Player1 && tabuleiro[2][1] === Player1 || tabuleiro[0][2] === Player1 && tabuleiro[1][2] === Player1 && tabuleiro[2][2] === Player1)
-
-console.log("Jogador X Ganhou.")
-}
-
-Jogada(Player1);
-Jogada(Player2);
-console.table(tabuleiro);
-
-
-
-function verificarColuna(jogador, tabuleiro) {
-    for (let j = 0; j < 3; j++) {
-      if (tabuleiro[0][j] === jogador && tabuleiro[1][j] === jogador && tabuleiro[2][j] === jogador) {
-        return true;
-      }
+function verificaVencedor() {
+  for (let i = 0; i < 3; i++) {
+    if (
+      //Verifica coluna
+      tabuleiro[0][i] === tabuleiro[1][i] &&
+      tabuleiro[1][i] === tabuleiro[2][i] &&
+      tabuleiro[1][i] !== " "
+    ) {
+      console.log(`O jogador ${tabuleiro[1][i]} ganhou`);
+      return tabuleiro[1][i];
+    } else if (
+      //Verifica linha
+      tabuleiro[i][0] === tabuleiro[i][1] &&
+      tabuleiro[i][1] === tabuleiro[i][2] &&
+      tabuleiro[i][1] !== " "
+    ) {
+      console.log(`O jogador ${tabuleiro[i][1]} ganhou`);
+      return tabuleiro[i][1];
     }
+  }
+  if (
+    // Vefifica diagonal
+    tabuleiro[0][0] === tabuleiro[1][1] &&
+    tabuleiro[1][1] === tabuleiro[2][2] &&
+    tabuleiro[1][1] !== " "
+  ) {
+    console.log(`O jogador ${tabuleiro[1][1]} ganhou`);
+    return tabuleiro[1][1];
+  } else if (
+    // Vefifica diagonal
+    tabuleiro[0][2] === tabuleiro[1][1] &&
+    tabuleiro[1][1] === tabuleiro[2][0] &&
+    tabuleiro[1][1] !== " "
+  ) {
+    console.log(`O jogador ${tabuleiro[1][1]} ganhou`);
+    return tabuleiro[1][1];
+  }
+
+  if (!tabuleiro.some((event) => event.includes(" "))) {
+    console.log("O jogo empatou");
+    return "Empate";
+  }
+  return "";
+}
+
+let vencedor = "";
+
+while (!vencedor) {
+  jogar(jogadorAtual);
+  console.table(tabuleiro);
+  vencedor = verificaVencedor();
+
+  if (!vencedor) {
+    jogar(jogadorAtual);
+    console.table(tabuleiro);
+    vencedor = verificaVencedor();
+  }
+}
