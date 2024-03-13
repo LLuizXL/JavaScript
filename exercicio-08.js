@@ -73,3 +73,49 @@ console.log("---------------------");
 sorvete3.cardapioSorvete();
 sorvete2.setPreco(10.51);
 sorvete2.cardapioSorvete();
+
+// // 1.Comparação de strings (sem case sensitive):
+// Escreva uma função em JavaScript que recebe duas strings e verifica se elas são iguais, ignorando o tamanho das letras (maiúsculas e minúsculas).
+
+var originalGame = "Battlefield 2042";
+var game = "battlefield 2042";
+
+function NameSearcher(name1, name2) {
+  if (name1.toLowerCase() !== name2.toLowerCase()) {
+    console.log("Os nomes estão Diferentes.");
+  } else {
+    console.log("Os nomes estão iguais.");
+  }
+}
+
+NameSearcher(originalGame, game);
+console.log(
+  "-----------------------------------------------------------------"
+);
+
+// 2.Extrair números de uma string:
+// Crie uma função em JavaScript que recebe uma string e retorna uma lista contendo apenas os números encontrados nela.
+
+var textinho =
+  "and LeBron did! right for the 3 point shot, he just passed the world record for most record points, 30k!! The legend of the 21st century!";
+
+const regexNumeros = /\d+/g;
+const numerosEncontrados = encontrarNumeros(textinho);
+
+function encontrarNumeros(texto) {
+  const numeros = texto.match(regexNumeros);
+  return numeros;
+}
+console.log(numerosEncontrados);
+console.log("==============================");
+
+// 3.Inverter a ordem das palavras em uma frase:
+// Desenvolva uma função em JavaScript que recebe uma frase e retorna uma nova string com a ordem das palavras invertidas
+const textito = "Olha, estou Invertido! Como faz pra voltar?";
+const youGotReversed = reverseMachine(textito);
+
+function reverseMachine(textinho) {
+  const palavras = textinho.split(" ");
+  return palavras.reverse().join(" ");
+}
+console.log(youGotReversed);
